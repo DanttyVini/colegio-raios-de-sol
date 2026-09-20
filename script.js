@@ -32,16 +32,16 @@ if (botaoAtual) {
 }
 // TROCAR IMAGEM DE FUNDO
 if (pagina === "inicio") {
-    document.body.style.backgroundImage = 'url("img/logo-rs.png")';
+ document.body.style.backgroundImage = "url('logo-rs.png')";
 }
 
 if (pagina === "professores") {
     document.body.classList.add("pagina-professores");
-    document.body.style.backgroundImage = "url('img/fundo-professores.png')";
+   document.body.style.backgroundImage = "url('fundo-professores.png')";
 }
 
 if (pagina === "robotica") {
-    document.body.style.backgroundImage = 'url("img/fundo-robotica.png")';
+   document.body.style.backgroundImage = "url('fundo-robotica.png')";
 }
 
 // Configuração do fundo
