@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colégio Raios de Sol</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="cabecalhoSite">
+
+        <h1>☀️ Colégio Raios de Sol</h1>
+
+        <nav>
+    <button id="btn-inicio" onclick="mostrarPagina('inicio')">Início</button>
+<button id="btn-professores" onclick="mostrarPagina('professores')">Professores</button>
+<button id="btn-robotica" onclick="mostrarPagina('robotica')">Robótica</button>
+
+</nav>
+<div class="area-usuario">
+    <div class="avatar-usuario">👤</div>
+
+    <span id="usuarioLogado"></span>
+
+    <button class="menu-tres-pontos" onclick="abrirMenuUsuario()">⋮</button>
+
+    <div id="menuUsuario" class="menu-usuario">
+        <button onclick="sairProfessor()">🚪 Sair</button>
+    </div>
+</div>
+</header>
+
+<section id="login" class="pagina">
+
+    <div class="caixa-login">
+<div class="nome-login">☀️ Colégio Raios de Sol</div>
+        <h2>🔐 Área do Professor</h2>
+
+        <p>Entre com seu e-mail e senha para editar a programação.</p>
+
+        <label>E-mail</label>
+        <input
+            type="email"
+            id="emailLogin"
+            placeholder="Digite seu e-mail"
+        >
+
+        <label>Senha</label>
+
+<div class="campo-senha">
+    <input
+    type="password"
+    id="senhaLogin"
+    placeholder="Digite sua senha"
+    onkeydown="if(event.key === 'Enter') entrarProfessor()"
+>
+
+    <button type="button" class="olho-senha" onclick="mostrarSenha()">👁️</button>
+</div>
+
+        <button onclick="entrarProfessor()">
+            Entrar
+        </button>
+
+        <p id="mensagemLogin"></p>
+
+    </div>
+
+</section>
+    <main id="conteudoSite" style="display: none;">
+
+        
+
+        <p>
+            
+        </p>
+
+        <main>
+
+    <!-- INÍCIO -->
+
+    <section id="inicio" class="pagina ativa">
+
+        
+
+        <p>
+           
+        </p>
+
+        <div class="cards">
+
+    <div class="card" onclick="mostrarPagina('professores')">
+        <h3>👨‍🏫 Professores</h3>
+        <span class="seta-card">→</span>
+    </div>
+
+    <div class="card" onclick="mostrarPagina('robotica')">
+        <h3>🤖 Robótica</h3>
+        <span class="seta-card">→</span>
+    </div>
+
+</div>
+
+</div>
+
+    </section>
+
+
+    <!-- HISTÓRIA -->
+
+    <section id="historia" class="pagina">
+
+        <h2>📖 História do Colégio Raios de Sol</h2>
+
+        <p>
+            Aqui ficará a história do Colégio Raios de Sol.
+        </p>
+
+        <p>
+            Podemos colocar aqui a história completa da escola,
+            incluindo sua fundação, evolução e momentos importantes.
+        </p>
+
+    </section>
+
+
+    <!-- PROFESSORES -->
+
+    <section id="professores" class="pagina">
+
+    <h2>👨‍🏫 Professores</h2>
+
+    <p>Selecione o nível de ensino:</p>
+
+    <div class="cards">
+
+        <div class="card" onclick="mostrarPagina('fundamental1')">
+    <h3>📚 Ensino Fundamental I</h3>
+    <span class="seta-card">→</span>
+</div>
+
+        <div class="card" onclick="mostrarPagina('fundamental2')">
+    <h3>📚 Ensino Fundamental II</h3>
+    <span class="seta-card">→</span>
+</div>
+
+        <div class="card" onclick="mostrarPagina('medio')">
+    <h3>🎓 Ensino Médio</h3>
+    <span class="seta-card">→</span>
+</div>
+
+    </div>
+
+</section>
+<!-- ENSINO FUNDAMENTAL I -->
+
+<section id="fundamental1" class="pagina" data-ensino="fundamental1">
+
+    <button class="botao-voltar" onclick="mostrarPagina('professores')">
+        ← Voltar
+    </button>
+
+    <h2>📚 Ensino Fundamental I</h2>
+    <p>Programação da Sala de Robótica</p>
+
+
+    <!-- MANHÃ -->
+
+    <p class="aviso-arrastar">↔️ Arraste para o lado para ver todos os horários</p>
+
+    <div class="agenda-nova manha-nova" data-turno="manha">
+
+        <h2>☀️ MANHÃ</h2>
+
+        <div class="cabecalho-horarios">
+            <div></div>
+            <div>08:00 - 08:40</div>
+            <div>09:10 - 09:50</div>
+            <div>10:20 - 11:00</div>
+            <div>11:30 - 12:10</div>
+        </div>
+
+        <div class="linha-dia" data-dia="segunda">
+    <div class="nome-dia">SEGUNDA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="terca">
+    <div class="nome-dia">TERÇA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quarta">
+    <div class="nome-dia">QUARTA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quinta">
+    <div class="nome-dia">QUINTA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="sexta">
+    <div class="nome-dia">SEXTA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+    </div>
+
+
+    <!-- TARDE -->
+
+    <div class="agenda-nova tarde-nova" data-turno="tarde">
+
+        <h2>🌙 TARDE</h2>
+
+        <div class="cabecalho-horarios">
+            <div></div>
+            <div>13:50 - 14:30</div>
+            <div>15:00 - 15:40</div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="linha-dia" data-dia="segunda">
+    <div class="nome-dia">SEGUNDA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="terca">
+    <div class="nome-dia">TERÇA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quarta">
+    <div class="nome-dia">QUARTA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quinta">
+    <div class="nome-dia">QUINTA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="sexta">
+    <div class="nome-dia">SEXTA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+    </div>
+
+</section>
+
+
+<!-- ENSINO FUNDAMENTAL II -->
+
+<section id="fundamental2" class="pagina" data-ensino="fundamental2">
+
+    <button class="botao-voltar" onclick="mostrarPagina('professores')">
+        ← Voltar
+    </button>
+
+    <h2>📘 Ensino Fundamental II</h2>
+    <p>Programação da Sala de Robótica</p>
+
+    <!-- MANHÃ -->
+
+    <p class="aviso-arrastar">↔️ Arraste para o lado para ver todos os horários</p>
+
+    <div class="agenda-nova manha-nova" data-turno="manha">
+
+        <h2>☀️ MANHÃ</h2>
+
+        <div class="cabecalho-horarios">
+            <div></div>
+            <div>08:00 - 08:40</div>
+            <div>09:10 - 09:50</div>
+            <div>10:20 - 11:00</div>
+            <div>11:30 - 12:10</div>
+        </div>
+
+        <div class="linha-dia" data-dia="segunda">
+    <div class="nome-dia">SEGUNDA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="terca">
+    <div class="nome-dia">TERÇA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quarta">
+    <div class="nome-dia">QUARTA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quinta">
+    <div class="nome-dia">QUINTA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="sexta">
+    <div class="nome-dia">SEXTA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+    </div>
+
+    <!-- TARDE -->
+
+    <div class="agenda-nova tarde-nova" data-turno="tarde">
+
+        <h2>🌙 TARDE</h2>
+
+        <div class="cabecalho-horarios">
+            <div></div>
+            <div>13:50 - 14:30</div>
+            <div>15:00 - 15:40</div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="linha-dia" data-dia="segunda">
+    <div class="nome-dia">SEGUNDA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="terca">
+    <div class="nome-dia">TERÇA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quarta">
+    <div class="nome-dia">QUARTA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quinta">
+    <div class="nome-dia">QUINTA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="sexta">
+    <div class="nome-dia">SEXTA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+    </div>
+
+</section>
+
+
+<!-- ENSINO MÉDIO -->
+
+<section id="medio" class="pagina" data-ensino="medio">
+
+    <button class="botao-voltar" onclick="mostrarPagina('professores')">
+        ← Voltar
+    </button>
+
+    <h2>🎓 Ensino Médio</h2>
+    <p>Programação da Sala de Robótica</p>
+
+    <!-- MANHÃ -->
+
+    <p class="aviso-arrastar">↔️ Arraste para o lado para ver todos os horários</p>
+
+    <div class="agenda-nova manha-nova" data-turno="manha">
+
+        <h2>☀️ MANHÃ</h2>
+
+        <div class="cabecalho-horarios">
+            <div></div>
+            <div>08:00 - 08:40</div>
+            <div>09:10 - 09:50</div>
+            <div>10:20 - 11:00</div>
+            <div>11:30 - 12:10</div>
+        </div>
+
+        <div class="linha-dia" data-dia="segunda">
+    <div class="nome-dia">SEGUNDA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="terca">
+    <div class="nome-dia">TERÇA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quarta">
+    <div class="nome-dia">QUARTA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quinta">
+    <div class="nome-dia">QUINTA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="sexta">
+    <div class="nome-dia">SEXTA</div>
+
+    <textarea data-horario="08:00 - 08:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="09:10 - 09:50" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="10:20 - 11:00" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="11:30 - 12:10" placeholder="Digite a programação"></textarea>
+</div>
+
+    </div>
+
+
+    <!-- TARDE -->
+
+    <div class="agenda-nova tarde-nova" data-turno="tarde">
+
+        <h2>🌙 TARDE</h2>
+
+        <div class="cabecalho-horarios">
+            <div></div>
+            <div>13:50 - 14:30</div>
+            <div>15:00 - 15:40</div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="linha-dia" data-dia="segunda">
+    <div class="nome-dia">SEGUNDA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="terca">
+    <div class="nome-dia">TERÇA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quarta">
+    <div class="nome-dia">QUARTA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="quinta">
+    <div class="nome-dia">QUINTA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+        <div class="linha-dia" data-dia="sexta">
+    <div class="nome-dia">SEXTA</div>
+
+    <textarea data-horario="13:50 - 14:30" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="15:00 - 15:40" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-1" placeholder="Digite a programação"></textarea>
+
+    <textarea data-horario="tarde-extra-2" placeholder="Digite a programação"></textarea>
+</div>
+
+    </div>
+
+</section>
+
+    <!-- ROBÓTICA -->
+
+    <!-- ROBÓTICA -->
+<!-- ROBÓTICA -->
+<section id="robotica" class="pagina">
+
+    <button class="botao-voltar" onclick="mostrarPagina('inicio')">
+        ← Voltar
+    </button>
+
+    <h2>🤖 Robótica</h2>
+
+    <p>Selecione a área que deseja acessar.</p>
+
+    <div class="opcoes-professores">
+
+    <button class="card-robotica" onclick="mostrarPagina('aulasRobotica')">
+        <span class="icone-card">🤖</span>
+
+        <span class="texto-card">
+            <strong>Aulas de Robótica</strong>
+            <small>Programação das aulas de robótica.</small>
+        </span>
+
+        <span class="seta-card">→</span>
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- AULAS DE ROBÓTICA -->
+<section id="aulasRobotica" class="pagina" data-ensino="robotica">
+
+    <button class="botao-voltar" onclick="mostrarPagina('robotica')">
+        ← Voltar
+    </button>
+
+    <h2>🤖 Aulas de Robótica</h2>
+
+    <p>Programação das aulas de robótica.</p>
+
+
+    <!-- MANHÃ -->
+    <div class="agenda-nova manha-nova" data-turno="manha">
+
+        <h2>☀️ MANHÃ</h2>
+
+        <div class="cabecalho-horarios">
+            <div></div>
+            <div>08:40 - 09:40</div>
+            <div>09:40 - 10:30</div>
+        </div>
+
+        <div class="linha-dia" data-dia="terca">
+
+            <div class="nome-dia">TERÇA</div>
+
+            <textarea
+                data-horario="08:40 - 09:40"
+                placeholder="Digite a programação"></textarea>
+
+            <textarea
+                data-horario="09:40 - 10:30"
+                placeholder="Digite a programação"></textarea>
+
+        </div>
+
+    </div>
+
+
+    <!-- TARDE -->
+    <div class="agenda-nova tarde-nova" data-turno="tarde">
+
+        <h2>🌙 TARDE</h2>
+
+        <div class="cabecalho-horarios">
+            <div></div>
+            <div>13:00 - 13:50</div>
+            <div>13:50 - 14:30</div>
+        </div>
+
+        <div class="linha-dia" data-dia="quinta">
+
+            <div class="nome-dia">QUINTA</div>
+
+            <textarea
+                data-horario="13:00 - 13:50"
+                placeholder="Digite a programação"></textarea>
+
+            <textarea
+                data-horario="13:50 - 14:30"
+                placeholder="Digite a programação"></textarea>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+    <footer></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe36e;
+    color: #333;
+    min-height: 100vh;
+    margin: 0;
+    
+}
+
+/* CABEÇALHO */
+
+header {
+   background: linear-gradient(135deg, #ffd900 0%, #ffc400 50%, #ffe45c 100%);
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 20px;
+}
+
+/* MENU */
+
+nav button {
+    border: none;
+    padding: 12px 18px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: #eeeeee;
+}nav button.menu-ativo {
+    background-color: #063970;
+    color: white;
+}
+nav button.ativo {
+    background-color: #06366b;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* CONTEÚDO */
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+main h2 {
+    margin-bottom: 15px;
+}
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    flex: 1;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+/* RODAPÉ */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background-color: #06366b;
+    padding: 0;
+    margin: 0;
+}
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+    body {
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    nav button {
+        width: 90%;
+    }
+
+}
+
+.pagina {
+    display: none;
+}
+
+.pagina.ativa {
+    display: block;
+}
+/* AGENDA DA ROBÓTICA */
+
+.agenda {
+    margin-top: 30px;
+}
+
+.agenda h3 {
+    margin-top: 35px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #f6c400;
+    padding: 12px;
+    border-radius: 8px 8px 0 0;
+}
+
+.agenda table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-bottom: 40px;
+}
+
+.agenda th,
+.agenda td {
+    border: 1px solid #333;
+    padding: 12px;
+}
+
+.agenda th:first-child,
+.agenda td:first-child {
+    width: 25%;
+}
+
+.agenda th {
+    background-color: #eeeeee;
+}
+
+.agenda td {
+    height: 50px;
+}
+.agenda input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    background: transparent;
+}
+.titulo-turno {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+}
+/* NOVA AGENDA */
+
+.turno {
+    margin-top: 35px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.turno > h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* MANHÃ LARANJA */
+
+.manha {
+    background-color: #fff0dc;
+    border: 2px solid #ff9800;
+}
+
+.manha > h2 {
+    color: #e86f00;
+}
+
+.manha .dia h3 {
+    background-color: #ff8c00;
+    color: white;
+}
+
+
+/* TARDE AZUL ESCURO */
+
+.tarde {
+    background-color: #003f73;
+}
+
+.tarde > h2 {
+    color: white;
+}
+
+.tarde .dia h3 {
+    background-color: #00549b;
+    color: white;
+}
+
+
+/* DIAS */
+
+.dias-agenda {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.dia {
+    min-width: 0;
+}
+
+.dia h3 {
+    text-align: center;
+    padding: 12px 5px;
+    border-radius: 8px 8px 0 0;
+    font-size: 14px;
+}
+
+.dia table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.dia th,
+.dia td {
+    border: 1px solid #bbbbbb;
+    padding: 8px;
+    height: 55px;
+}
+
+.dia th {
+    background-color: #f3f3f3;
+    font-size: 13px;
+}
+
+.dia td:first-child {
+    width: 42%;
+    text-align: center;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.dia input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+
+/* BOTÃO VOLTAR */
+
+.botao-voltar {
+    padding: 10px 18px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #00549b;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 900px) {
+
+    .dias-agenda {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =================================
+   NOVO MODELO DA AGENDA
+================================= */
+
+.agenda-nova {
+    margin-top: 35px;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+.agenda-nova h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+
+/* MANHÃ */
+
+.manha-nova {
+    background-color: #fff1df;
+    border: 2px solid #ff8500;
+}
+
+.manha-nova h2 {
+    color: #e86f00;
+}
+
+
+/* TARDE */
+
+.tarde-nova {
+    background-color: #004b80;
+    margin-top: 35px;
+}
+
+.tarde-nova h2 {
+    color: white;
+}
+
+
+/* HORÁRIOS */
+
+.cabecalho-horarios {
+    display: grid;
+    grid-template-columns: 130px repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.cabecalho-horarios div {
+    text-align: center;
+    font-weight: bold;
+    padding: 12px 5px;
+    border-radius: 8px;
+}
+
+.manha-nova .cabecalho-horarios div:not(:first-child) {
+    background-color: #ff8500;
+    color: white;
+}
+
+.tarde-nova .cabecalho-horarios div:not(:first-child) {
+    background-color: #0060a5;
+    color: white;
+}
+
+
+/* CADA DIA */
+
+.linha-dia {
+    display: grid;
+    grid-template-columns: 130px repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.nome-dia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+}
+
+.manha-nova .nome-dia {
+    background-color: #ff8500;
+}
+
+.tarde-nova .nome-dia {
+    background-color: #0060a5;
+}
+
+
+/* CAMPO DE PROGRAMAÇÃO */
+
+.linha-dia textarea {
+    width: 100%;
+
+    /* espaço para pelo menos 2 linhas */
+    min-height: 85px;
+
+    padding: 12px;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+
+    resize: vertical;
+
+    box-sizing: border-box;
+}
+
+.linha-dia textarea:focus {
+    outline: 2px solid #4d9cff;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 900px) {
+
+    .agenda-nova {
+        overflow-x: auto;
+    }
+
+    .cabecalho-horarios,
+    .linha-dia {
+        min-width: 900px;
+    }
+
+}
+/* LOGIN DOS PROFESSORES */
+
+.caixa-login {
+    max-width: 450px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.caixa-login h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.caixa-login p {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.caixa-login label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.caixa-login input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.caixa-login button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background-color: #00549b;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.caixa-login button:hover {
+    background-color: #003f73;
+}
+
+#mensagemLogin {
+    margin-top: 15px;
+    font-weight: bold;
+}
+/* BLOQUEIO DO SITE SEM LOGIN */
+
+#cabecalhoSite {
+    display: none !important;
+}
+
+#conteudoSite {
+    display: none !important;
+}
+
+#login {
+    display: block !important;
+}
+/* CARD DE AULAS DE ROBÓTICA */
+
+#robotica .card-robotica {
+    width: 100%;
+    min-height: 120px;
+    padding: 25px 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    background: white;
+    border: none;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+    cursor: pointer;
+    text-align: left;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#robotica .card-robotica:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+#robotica .icone-card {
+    font-size: 42px;
+    flex-shrink: 0;
+}
+
+#robotica .texto-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#robotica .texto-card strong {
+    font-size: 24px;
+    color: #222;
+}
+
+#robotica .texto-card small {
+    font-size: 17px;
+    color: #666;
+}
+
+#robotica .seta-card {
+    margin-left: auto;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #f0f0f0;
+
+    font-size: 30px;
+    color: #555;
+}
+/* CARDS DA PÁGINA INICIAL */
+
+#inicio .cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#inicio .card {
+    background: rgba(255, 255, 255, 0.95);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    transition: 0.2s;
+}
+
+#inicio .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+#inicio .card h3 {
+    font-size: 22px;
+    margin: 0;
+}
+.seta-card {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: 0.3s;
+}
+
+.card {
+    position: relative;
+    cursor: pointer;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.card:hover .seta-card {
+    background-color: #063970;
+    color: white;
+}
+
+.card {
+    transition: 0.3s;
+}
+#professores .cards {
+    gap: 15px;
+}
+
+#professores .card {
+    min-height: 100px;
+    padding: 25px 80px 25px 25px;
+}
+
+#professores .card h3 {
+    font-size: 17px;
+    white-space: normal;
+}
+
+/* BOTÃO VOLTAR DAS AGENDAS */
+.botao-voltar {
+    background: #063970;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 22px;
+    transition: 0.25s;
+}
+
+.botao-voltar:hover {
+    background: #0b5aa5;
+    transform: translateX(-4px);
+}
+
+/* TÍTULO DAS AGENDAS */
+#fundamental1 > h2,
+#fundamental2 > h2,
+#medio > h2 {
+    font-size: 28px;
+    color: #063970;
+    margin-bottom: 6px;
+}
+
+#fundamental1 > p,
+#fundamental2 > p,
+#medio > p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 28px;
+}
+/* PAINÉIS DAS AGENDAS */
+.agenda-nova {
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(4px);
+    transition: 0.3s;
+}
+
+.agenda-nova:hover {
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.16);
+}
+/* CAMPOS DA PROGRAMAÇÃO */
+.agenda-nova textarea {
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.95);
+    transition: 0.2s;
+    outline: none;
+}
+
+.agenda-nova textarea:focus {
+    border-color: #063970;
+    box-shadow: 0 0 0 3px rgba(6, 57, 112, 0.15);
+    background: white;
+}
+/* HORÁRIOS DAS AGENDAS */
+.cabecalho-horarios > div:not(:first-child) {
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 12px 8px;
+    text-align: center;
+    transition: 0.25s;
+}
+
+.manha-nova .cabecalho-horarios > div:not(:first-child) {
+    background: #ff7a00;
+    color: white;
+}
+
+.tarde-nova .cabecalho-horarios > div:not(:first-child) {
+    background: #063970;
+    color: white;
+}
+/* DIAS DA SEMANA */
+.nome-dia {
+    font-weight: bold;
+    color: #063970;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    padding: 12px 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+/* DIAS DA SEMANA - AZUL */
+.agenda-nova .nome-dia {
+    background: #063970;
+    color: white;
+    border-radius: 10px;
+}
+/* FUNDO DAS AGENDAS */
+.agenda-nova {
+    background: rgba(255, 255, 255, 0.92);
+}
+/* AGENDA DA TARDE */
+.tarde-nova {
+    border: 2px solid #063970;
+}
+
+.tarde-nova h3 {
+    color: #063970;
+}
+/* ESPAÇO ENTRE MANHÃ E TARDE */
+.tarde-nova {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+/* CORRIGIR TÍTULO TARDE */
+.tarde-nova .titulo-turno {
+    color: #063970 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+/* CORRIGIR NOME TARDE */
+.tarde-nova h2,
+.tarde-nova h3,
+.tarde-nova .titulo-agenda {
+    color: #063970 !important;
+}/* TÍTULO MANHÃ E TARDE */
+.agenda-nova h3 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+/* TÍTULO DA PÁGINA DE ROBÓTICA */
+#robotica > h2 {
+    font-size: 28px;
+    color: #063970;
+    margin-bottom: 6px;
+}
+
+#robotica > p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 28px;
+}
+/* TÍTULO DA AGENDA DE ROBÓTICA */
+#aulasRobotica > h2 {
+    font-size: 28px;
+    color: #063970;
+    margin-bottom: 6px;
+}
+
+#aulasRobotica > p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 28px;
+}/* SETA DO CARD DE ROBÓTICA */
+.card-robotica {
+    position: relative;
+}
+
+.card-robotica .seta-card {
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}/* AJUSTES PARA CELULAR */
+@media (max-width: 700px) {
+
+    main {
+        width: 100%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .pagina {
+        width: 100%;
+    }
+
+}
+/* MENU NO CELULAR */
+@media (max-width: 700px) {
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    nav button {
+        width: auto;
+        flex: 1;
+        margin: 0;
+        padding: 11px 5px;
+        font-size: 12px;
+    }
+
+}
+/* AGENDA NO CELULAR */
+@media (max-width: 700px) {
+
+    .agenda-nova {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .cabecalho-horarios,
+    .linha-dia {
+        min-width: 720px;
+    }
+
+}/* AVISO DE ARRASTAR A AGENDA */
+.aviso-arrastar {
+    display: none;
+}
+
+@media (max-width: 700px) {
+
+    .aviso-arrastar {
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+        color: #063970;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+}
+/* TÍTULOS NO CELULAR */
+@media (max-width: 700px) {
+
+    #fundamental1 > h2,
+    #fundamental2 > h2,
+    #medio > h2,
+    #aulasRobotica > h2 {
+        font-size: 23px;
+        line-height: 1.2;
+    }
+
+}/* PROFESSOR LOGADO */
+#usuarioLogado {
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #063970;
+}
+/* LOGIN - VISUAL NOVO */
+.caixa-login {
+    width: 430px;
+    max-width: 90%;
+    padding: 40px 35px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
+
+    border-top: 6px solid #f6c400;
+}
+.nome-login {
+    text-align: center;
+    color: #063970;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.caixa-login h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.caixa-login button {
+    transition: 0.25s;
+}
+
+.caixa-login button:hover {
+    background-color: #063970;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.20);
+}.caixa-login input {
+    transition: 0.25s;
+    outline: none;
+}
+
+.caixa-login input:focus {
+    border-color: #0b5aa5;
+    box-shadow: 0 0 0 3px rgba(11, 90, 165, 0.15);
+}
+.campo-senha {
+    position: relative;
+}
+
+.campo-senha input {
+    width: 100%;
+    padding-right: 50px;
+}
+
+.campo-senha .olho-senha {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 35px;
+    height: 35px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.campo-senha .olho-senha:hover {
+    background: transparent;
+    box-shadow: none;
+    transform: translateY(-50%) scale(1.1);
+}
+.campo-senha .olho-senha {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    margin: 0;
+}
+/* MENSAGEM DO LOGIN */
+#mensagemLogin {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    min-height: 20px;
+}
+/* ÁREA DO USUÁRIO */
+.area-usuario {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: rgba(255, 255, 255, 0.9);
+    padding: 7px 10px;
+    border-radius: 30px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.avatar-usuario {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+
+    background: #063970;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#usuarioLogado {
+    margin: 0;
+    font-size: 12px;
+    color: #063970;
+    font-weight: bold;
+}
+
+.menu-tres-pontos {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 5px;
+    color: #063970;
+}
+
+.menu-usuario {
+    display: none;
+}
+/* MENU DO USUÁRIO */
+.area-usuario {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    background: rgba(255, 255, 255, 0.95);
+    padding: 7px 10px;
+    border-radius: 30px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+/* BOLINHA DO USUÁRIO */
+.avatar-usuario {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+
+    background: #063970;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+/* E-MAIL */
+#usuarioLogado {
+    font-size: 13px;
+    font-weight: bold;
+    color: #063970;
+}
+
+/* BOTÃO DOS 3 PONTINHOS */
+.menu-tres-pontos {
+    border: none;
+    background: transparent;
+    color: #063970;
+
+    font-size: 23px;
+    font-weight: bold;
+
+    padding: 4px 7px;
+    cursor: pointer;
+}
+
+/* CAIXA QUE ABRE PARA BAIXO */
+.menu-usuario {
+    display: none;
+
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+
+    width: 155px;
+
+    background: white;
+    padding: 8px;
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+    z-index: 2000;
+}
+
+/* BOTÃO SAIR */
+.menu-usuario button {
+    width: 100%;
+
+    border: none;
+    background: transparent;
+
+    padding: 12px 14px;
+    border-radius: 9px;
+
+    text-align: left;
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+.menu-usuario button:hover {
+    background: #f1f3f5;
+}
+/* AJUSTE FINAL DO MENU SAIR */
+.menu-usuario {
+    top: calc(100% + 5px);
+    right: 0;
+    width: 135px;
+    padding: 6px;
+}
+
+.menu-usuario button {
+    padding: 11px 12px;
+    font-size: 14px;
+}
+/* NOVA POSIÇÃO DO CABEÇALHO */
+#cabecalhoSite {
+    position: relative;
+}
+
+/* NOME DO COLÉGIO NO CANTO ESQUERDO */
+#cabecalhoSite h1 {
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    margin: 0;
+    font-size: 25px;
+}
+
+/* MENU CENTRALIZADO */
+#cabecalhoSite nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    }/* DEIXAR OS TEXTOS DAS PÁGINAS MAIS VISÍVEIS */
+.pagina h2,
+.pagina p {
+    color: #111 !important;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+    }/* ============================= */
+/* CABEÇALHO DA PÁGINA ROBÓTICA */
+/* ============================= */
+
+body.robotica header {
+    background: linear-gradient(135deg, #0757d9 0%, #0878e8 50%, #18b9ed 100%);
+}
+
+/* Nome do colégio branco somente na Robótica */
+body.robotica header h1 {
+    color: white;
+}
+
+/* Título Robótica branco */
+body.robotica h2 {
+    color: white !important;
+}
+
+/* Texto abaixo do título */
+body.robotica h2 + p {
+    color: white !important;
+}/* ============================= */
+/* CORES DA PÁGINA PROFESSORES */
+/* ============================= */
+
+body.professores header {
+    background: linear-gradient(135deg, #5c2e0b 0%, #7a3f12 50%, #9a581f 100%);
+}
+
+/* Nome do colégio em branco */
+body.professores header h1 {
+    color: white;
+}
+
+/* Rodapé marrom somente em Professores */
+body.professores footer {
+    background: #5c2e0b;
+}
